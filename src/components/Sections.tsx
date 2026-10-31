@@ -1,6 +1,7 @@
 import { Download, Pause, Play, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
-import { checks, directions, kits, numerals, pipeline, REPO, roles } from "@/data";
+import { checks, directions, kits, numerals, pipeline, REPO, stems } from "@/data";
+import loudness from "@/loudness.json";
 import { useLab } from "@/lab";
 import { Section, SectionHeading } from "@/components/Chrome";
 
@@ -212,34 +213,66 @@ export function Sound() {
         Acid glide and accent live in the synthesizer. The acid MIDI is the note list plus velocity. Overlapping notes are not how this project represents a slide. Core Break V03 is an audio slice edit. Its MIDI is symbolic.
       </SectionHeading>
       <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-        {roles.map((role, index) => (
-          <li key={role} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-sm">
-            <span className="mono text-[var(--amber)]">{String(index + 1).padStart(2, "0")}</span>
-            <span className="ml-3">{role}</span>
+        {stems.map((role, index) => (
+          <li key={role.id} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-sm">
+            <div className="flex items-baseline justify-between gap-3">
+              <span><span className="mono text-[var(--amber)]">{String(index + 1).padStart(2, "0")}</span> <span className="font-semibold">{role.label}</span></span>
+              <span className="mono text-xs text-[var(--muted)]">{role.pitch}</span>
+            </div>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{role.fidelity}</p>
           </li>
         ))}
       </ul>
+      <div className="mt-6 grid gap-3 md:grid-cols-2">
+        <div className="rounded-3xl border border-[var(--line)] p-4">
+          <h3 className="text-lg font-semibold">Slice edit</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Core Break V03 and the fragmented turnaround are cuts of audio. Reversal and slice order live in the WAV. NumPy writes those samples. The paired MIDI does not recreate them.</p>
+        </div>
+        <div className="rounded-3xl border border-[var(--line)] p-4">
+          <h3 className="text-lg font-semibold">MIDI notes</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">V01, V02, bass, hook, stabs, acid, and atmosphere MIDI are the note lists. Acid glide is a synthesizer behavior. The file stores pitch, start, duration, and velocity.</p>
+        </div>
+      </div>
       <img src="images/signal-flow.png" alt="Signal path from the written kit, through the Python renderer, to WAV, MIDI, and the validator." className="mt-8 w-full rounded-3xl border border-[var(--line)]" />
     </Section>
   );
 }
 
+const pathNotes = [
+  "kitdata.py holds the notes, the regions, and the slice map. A slice edit is marked there. It is not inferred from the waveform later.",
+  "ticks_to_samples() converts an absolute tick with half-up rounding. Beat lengths are not added up. The same integer tempo is written into the MIDI.",
+  "SciPy oscillators and filters run at 48 kHz. Filter coefficients update every 64 samples. Oscillators are sample accurate. Acid glide is computed here, not stored as overlapping MIDI.",
+  "Arrangement stems and the demo share one linear trim. Summing the stem WAVs rebuilds the demo. V03 audio is the sliced waveform. Its MIDI export is labeled symbolic.",
+  "validate.py reopens the files named in the delivery manifest. The stem-sum residual is measured on those WAVs. LUFS and true peak are a later measurement, not one of those checks.",
+  "The site plays 8-second AAC previews. The deploy guard refuses anything that is not a web file, which is why the 3.4 GB stem set stays off GitHub Pages.",
+];
+
 export function Pipeline() {
+  const [open, setOpen] = useState(0);
+  const current = pipeline[open];
   return (
     <Section id="pipeline">
       <SectionHeading index="06" label="Pipeline" title="From a written kit to a reopened file.">
         The score is Python. NumPy and SciPy render the audio. The validator reopens the files named in the delivery manifest. A SuperCollider sketch is in the repository and was not executed.
       </SectionHeading>
-      <ol className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-        {pipeline.map(([n, title, where, body]) => (
-          <li key={n} className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-4">
-            <p className="mono text-xs text-[var(--acid)]">{n}</p>
-            <h3 className="mt-2 text-2xl font-semibold">{title}</h3>
-            <p className="mono mt-1 text-xs text-[var(--amber)]">{where}</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{body}</p>
-          </li>
-        ))}
-      </ol>
+      <div className="mt-8 grid gap-4 lg:grid-cols-[16rem_minmax(0,1fr)]">
+        <ol className="grid gap-2">
+          {pipeline.map(([n, title], index) => (
+            <li key={n}>
+              <button type="button" aria-pressed={open === index} onClick={() => setOpen(index)} className={`w-full rounded-2xl border px-3 py-3 text-left ${open === index ? "border-[var(--acid)] bg-[var(--panel)]" : "border-[var(--line)]"}`}>
+                <span className="mono text-xs text-[var(--acid)]">{n}</span>
+                <span className="mt-1 block font-semibold">{title}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+        <div className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-5">
+          <p className="mono text-xs text-[var(--amber)]">{current[2]}</p>
+          <h3 className="mt-2 text-3xl font-semibold">{current[1]}</h3>
+          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{current[3]}</p>
+          <p className="mt-4 text-sm leading-6">{pathNotes[open]}</p>
+        </div>
+      </div>
     </Section>
   );
 }
@@ -272,14 +305,29 @@ export function Validation() {
           The validation report did not load ({error}). The checks below are the same ten that the report records.
         </p>
       )}
-      <p className="mt-8 text-6xl font-semibold">{errors} errors</p>
-      <p className="text-[var(--muted)]">{notes.length || 9} notes. Eight are stem-sum residuals. One is K01’s shared trim of 0.485.</p>
+      <div className="mt-8 grid gap-3 sm:grid-cols-3">
+        <div className="rounded-3xl border border-[var(--acid)] bg-[var(--panel)] p-4">
+          <p className="eyebrow">Stem sum</p>
+          <p className="mt-2 text-4xl font-semibold">{errors} errors</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">Largest absolute residual 0.00000036</p>
+        </div>
+        <div className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-4">
+          <p className="eyebrow">Notes</p>
+          <p className="mt-2 text-4xl font-semibold">{notes.length || 9}</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">Eight residuals, plus K01’s trim of 0.4845</p>
+        </div>
+        <div className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-4">
+          <p className="eyebrow">Report</p>
+          <a className="mt-3 inline-block text-sm font-semibold underline" href="data/validation-report.json">validation-report.json</a>
+          <a className="mt-2 block text-sm font-semibold underline" href="data/loudness.json">loudness.json</a>
+        </div>
+      </div>
       {notes.length > 0 && (
         <ul className="mono mt-4 space-y-1 text-xs text-[var(--muted)]">
           {notes.map((note) => <li key={note}>{note}</li>)}
         </ul>
       )}
-      <ol className="mt-6 space-y-3">
+      <ol className="mt-6 grid gap-3 md:grid-cols-2">
         {checks.map(([title, body]) => (
           <li key={title} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-4 py-3">
             <p className="mono text-xs text-[var(--amber)]">{title}</p>
@@ -289,11 +337,10 @@ export function Validation() {
       </ol>
       <h3 className="mt-8 text-xl font-semibold">Limitations</h3>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[var(--muted)]">
-        <li>True-peak was not measured. There is no oversampling meter.</li>
-        <li>Integrated loudness was not measured. RMS in the review is not LUFS.</li>
+        <li>The validator did not measure true peak or LUFS. Those numbers were measured later, on the demo WAVs, with ffmpeg 6.1.1 ebur128. RMS in the musical review is still not LUFS.</li>
         <li>Listening was not part of the check. Rendering is not listening.</li>
         <li>The files were not imported into a commercial DAW in the environment that rendered them.</li>
-        <li>The browser plays 8-second excerpts. It does not stream the 64-bar stems.</li>
+        <li>The browser plays 8-second excerpts. Stem toggles are AAC cuts of that window. They are not the 64-bar stems, and their sum is not the WAV stem-sum check.</li>
       </ul>
     </Section>
   );
@@ -345,6 +392,92 @@ export function Brief() {
         ))}
       </ol>
       <p className="mt-6 text-sm text-[var(--muted)]">This site sets no cookies and loads no analytics. A privacy notice is not required for measurement that does not exist.</p>
+    </Section>
+  );
+}
+
+const meterOf = (id: string) => loudness.kits[id as keyof typeof loudness.kits];
+
+export function Compare() {
+  const [leftId, setLeftId] = useState("K01");
+  const [rightId, setRightId] = useState("K07");
+  const left = kits.find((kit) => kit.id === leftId) ?? kits[0];
+  const right = kits.find((kit) => kit.id === rightId) ?? kits[6];
+  const rows: Array<[string, string, string]> = [
+    ["Direction", left.direction, right.direction],
+    ["Requested BPM", String(left.bpm), String(right.bpm)],
+    ["Effective BPM", left.effective, right.effective],
+    ["Key", left.key, right.key],
+    ["Excerpt region", left.region, right.region],
+    ["Bass near a kick", left.kickShare.toFixed(2), right.kickShare.toFixed(2)],
+    ["Quiet / loud RMS", left.quietRatio.toFixed(3), right.quietRatio.toFixed(3)],
+    ["Core V01 centroid", `${left.centroidHz} Hz`, `${right.centroidHz} Hz`],
+    ["Integrated loudness", `${meterOf(left.id).integratedLufs.toFixed(1)} LUFS`, `${meterOf(right.id).integratedLufs.toFixed(1)} LUFS`],
+    ["True peak", `${meterOf(left.id).truePeakDbfs.toFixed(1)} dBFS`, `${meterOf(right.id).truePeakDbfs.toFixed(1)} dBFS`],
+    ["Loudness range", `${meterOf(left.id).lraLu.toFixed(1)} LU`, `${meterOf(right.id).lraLu.toFixed(1)} LU`],
+    ["Shared trim", left.gain.toFixed(4), right.gain.toFixed(4)],
+  ];
+  return (
+    <Section id="compare">
+      <SectionHeading index="02" label="Compare" title="Two kits, the same columns.">
+        Tempo, key, bass-to-kick weight, and the measured demo loudness. The bass figure is the share of bass note-ons within about 20 ms of a kick. It is from the score review, not a listening score.
+      </SectionHeading>
+      <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        <KitPick label="Left kit" value={leftId} onChange={setLeftId} />
+        <KitPick label="Right kit" value={rightId} onChange={setRightId} />
+      </div>
+      <div className="mt-4 overflow-x-auto rounded-3xl border border-[var(--line)]">
+        <table className="w-full min-w-[36rem] text-left text-sm">
+          <thead className="bg-[var(--panel)]">
+            <tr>
+              <th className="px-4 py-3 font-medium text-[var(--muted)]">Field</th>
+              <th className="px-4 py-3 font-semibold">{left.id} {left.name}</th>
+              <th className="px-4 py-3 font-semibold">{right.id} {right.name}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([label, a, b]) => (
+              <tr key={label} className="border-t border-[var(--line)]">
+                <th className="px-4 py-2.5 font-normal text-[var(--muted)]">{label}</th>
+                <td className={`mono px-4 py-2.5 ${a !== b ? "text-[var(--ink)]" : ""}`}>{a}</td>
+                <td className="mono px-4 py-2.5">{b}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Section>
+  );
+}
+
+function KitPick({ label, value, onChange }: { label: string; value: string; onChange: (id: string) => void }) {
+  return (
+    <label className="block text-sm">
+      <span className="eyebrow">{label}</span>
+      <select value={value} onChange={(event) => onChange(event.target.value)} className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--panel)] px-3 py-2">
+        {kits.map((kit) => <option key={kit.id} value={kit.id}>{kit.id} {kit.name} · {kit.bpm} BPM · {kit.key}</option>)}
+      </select>
+    </label>
+  );
+}
+
+export function Origin() {
+  return (
+    <Section id="origin">
+      <SectionHeading index="08" label="Origin" title="192 identities, written, not sampled.">
+        Nostalgia is an original 90s-inspired breakbeat and big-beat construction set. The audio is synthesized. It is not a sampled vintage break, and it is not a finished master.
+      </SectionHeading>
+      <div className="mt-8 grid gap-3 md:grid-cols-2">
+        <article className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-5">
+          <h3 className="text-xl font-semibold">What the 192 are</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Eight kits, 24 identities each. Seventeen are loops and seven are finite parts. Source breaks, dry companions, demos, stems, and MIDI are extra files. They are not extra identities. Each kit keeps one requested tempo and one key for the whole arrangement.</p>
+        </article>
+        <article className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-5">
+          <h3 className="text-xl font-semibold">Where the four directions come from</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Warehouse Pressure is the straight kick-and-snare weight, Freight at 128 and Rivet at 136. Acid Collision puts the acid line against the break. Solvent spends one region on a Phrygian flat two. Rave Memory leads with stabs. Afterglow lifts to the relative major. Concrete Funk is slower and leaves more space. Formwork is the only kit written in dorian, and it opens without the kick.</p>
+        </article>
+      </div>
+      <p className="mt-4 text-sm text-[var(--muted)]">The renderer is Python, NumPy 2.5.4, and SciPy 1.18.1. The SuperCollider sketch in the repository was not executed.</p>
     </Section>
   );
 }

@@ -4,12 +4,14 @@ import { REPO } from "@/data";
 
 export const NAV = [
   { href: "#lab", label: "Lab" },
+  { href: "#compare", label: "Compare" },
   { href: "#map", label: "Kit map" },
   { href: "#mindmap", label: "Mindmap" },
   { href: "#harmony", label: "Harmony" },
   { href: "#sound", label: "Sound" },
   { href: "#pipeline", label: "Pipeline" },
   { href: "#validation", label: "Validation" },
+  { href: "#origin", label: "Origin" },
   { href: "#brief", label: "Brief" },
   { href: "article.html", label: "Article" },
 ];

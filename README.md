@@ -37,6 +37,8 @@ PYTHONPATH=code python3 -m nostalgia.validate
 
 `scripts/deploy-gh-pages.sh` rebuilds `dist/`, refuses any file that is not a web asset, and publishes the `gh-pages` branch.
 
+`python3 scripts/build_previews.py` cuts the 8-second stem previews from the local 64-bar stem WAVs and writes `public/data/loudness.json`. Loudness is ffmpeg’s `ebur128` filter with true-peak mode, measured on each full demo, including the 2-second tail. The validator did not measure LUFS or true peak. Those numbers are a later measurement of the same demo files. The 24-bit stems themselves are not copied into this repository.
+
 ## Layout
 
 | Path | What it is |
