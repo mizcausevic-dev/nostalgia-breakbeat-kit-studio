@@ -1,0 +1,92 @@
+# Musical review
+
+This is a score and signal review. It is not a listening session.
+
+- K01 Opening identity bars 1-8: demo RMS -32.5 dBFS
+- K01 Break established bars 9-16: demo RMS -20.9 dBFS
+- K01 Bass lock bars 17-24: demo RMS -15.4 dBFS
+- K01 Hook statement bars 25-32: demo RMS -14.8 dBFS
+- K01 Breakdown bars 33-40: demo RMS -17.0 dBFS
+- K01 Rebuild bars 41-48: demo RMS -15.0 dBFS
+- K01 Transformed return bars 49-60: demo RMS -16.0 dBFS
+- K01 Ending bars 61-64: demo RMS -15.9 dBFS
+- K01 quiet-region RMS / loudest core-region RMS = 0.131
+- K01 bass note-ons within 20 ms of a kick: 75/187 (0.40). Window is 41 ticks.
+- K01 core V01 spectral centroid 9031 Hz, RMS -14.4 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K02 Cold open bars 1-4: demo RMS -18.7 dBFS
+- K02 Bass and break bars 5-12: demo RMS -14.5 dBFS
+- K02 Hook bars 13-20: demo RMS -14.2 dBFS
+- K02 Full pressure bars 21-28: demo RMS -13.7 dBFS
+- K02 Subtraction bars 29-36: demo RMS -15.8 dBFS
+- K02 Rebuild bars 37-44: demo RMS -18.7 dBFS
+- K02 Transformed return bars 45-56: demo RMS -14.8 dBFS
+- K02 Ending dropout bars 57-64: demo RMS -14.6 dBFS
+- K02 quiet-region RMS / loudest core-region RMS = 0.784
+- K02 bass note-ons within 20 ms of a kick: 72/175 (0.41). Window is 44 ticks.
+- K02 core V01 spectral centroid 9496 Hz, RMS -13.8 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K03 Acid alone bars 1-8: demo RMS -20.3 dBFS
+- K03 Collision bars 9-16: demo RMS -17.3 dBFS
+- K03 Bass joins bars 17-24: demo RMS -13.7 dBFS
+- K03 Phrygian tension bars 25-36: demo RMS -13.4 dBFS
+- K03 Hook bars 37-44: demo RMS -13.4 dBFS
+- K03 Breakdown bars 45-52: demo RMS -17.7 dBFS
+- K03 Transformed return bars 53-60: demo RMS -14.4 dBFS
+- K03 Ending bars 61-64: demo RMS -15.0 dBFS
+- K03 quiet-region RMS / loudest core-region RMS = 0.452
+- K03 bass note-ons within 20 ms of a kick: 55/125 (0.44). Window is 42 ticks.
+- K03 core V01 spectral centroid 9299 Hz, RMS -15.6 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K04 Swing intro bars 1-12: demo RMS -31.7 dBFS
+- K04 Break and acid bars 13-20: demo RMS -18.6 dBFS
+- K04 Bass weight bars 21-28: demo RMS -13.5 dBFS
+- K04 Stab weight bars 29-36: demo RMS -14.1 dBFS
+- K04 Breakdown bars 37-44: demo RMS -15.2 dBFS
+- K04 Rebuild bars 45-52: demo RMS -16.3 dBFS
+- K04 Transformed return bars 53-60: demo RMS -14.9 dBFS
+- K04 Ending bars 61-64: demo RMS -20.9 dBFS
+- K04 quiet-region RMS / loudest core-region RMS = 0.124
+- K04 bass note-ons within 20 ms of a kick: 59/134 (0.44). Window is 40 ticks.
+- K04 core V01 spectral centroid 8588 Hz, RMS -14.6 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K05 Stab motif bars 1-8: demo RMS -27.4 dBFS
+- K05 Break bars 9-16: demo RMS -21.2 dBFS
+- K05 Hook and bass bars 17-24: demo RMS -15.0 dBFS
+- K05 Relative lift bars 25-36: demo RMS -14.7 dBFS
+- K05 Breakdown bars 37-48: demo RMS -21.5 dBFS
+- K05 Rebuild bars 49-56: demo RMS -15.3 dBFS
+- K05 Transformed return bars 57-62: demo RMS -14.7 dBFS
+- K05 Short ending bars 63-64: demo RMS -23.2 dBFS
+- K05 quiet-region RMS / loudest core-region RMS = 0.231
+- K05 bass note-ons within 20 ms of a kick: 55/88 (0.62). Window is 42 ticks.
+- K05 core V01 spectral centroid 9332 Hz, RMS -16.0 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K06 Sparse open bars 1-8: demo RMS -35.0 dBFS
+- K06 Air and stab bars 9-16: demo RMS -27.5 dBFS
+- K06 Break and stab bars 17-24: demo RMS -21.1 dBFS
+- K06 Bass and hook bars 25-32: demo RMS -14.2 dBFS
+- K06 Peak bars 33-40: demo RMS -13.9 dBFS
+- K06 Breakdown bars 41-48: demo RMS -14.5 dBFS
+- K06 Rebuild bars 49-56: demo RMS -16.7 dBFS
+- K06 Return and end bars 57-64: demo RMS -17.0 dBFS
+- K06 quiet-region RMS / loudest core-region RMS = 0.088
+- K06 bass note-ons within 20 ms of a kick: 29/108 (0.27). Window is 38 ticks.
+- K06 core V01 spectral centroid 9806 Hz, RMS -17.2 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K07 Bass alone bars 1-4: demo RMS -19.4 dBFS
+- K07 Break dialogue bars 5-12: demo RMS -18.4 dBFS
+- K07 Full groove bars 13-20: demo RMS -17.6 dBFS
+- K07 Hook answers bars 21-28: demo RMS -17.6 dBFS
+- K07 Long space bars 29-40: demo RMS -22.8 dBFS
+- K07 Percussion rebuild bars 41-48: demo RMS -20.9 dBFS
+- K07 Transformed return bars 49-58: demo RMS -16.6 dBFS
+- K07 Stop ending bars 59-64: demo RMS -18.5 dBFS
+- K07 quiet-region RMS / loudest core-region RMS = 0.489
+- K07 bass note-ons within 20 ms of a kick: 88/171 (0.51). Window is 36 ticks.
+- K07 core V01 spectral centroid 9663 Hz, RMS -17.8 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.
+- K08 Percussion without kick bars 1-8: demo RMS -27.9 dBFS
+- K08 Kick and bass bars 9-16: demo RMS -17.1 dBFS
+- K08 Stabs and hook bars 17-24: demo RMS -16.4 dBFS
+- K08 Acid color bars 25-32: demo RMS -15.9 dBFS
+- K08 Full bars 33-40: demo RMS -15.7 dBFS
+- K08 Breakdown bars 41-48: demo RMS -19.9 dBFS
+- K08 Transformed bars 49-56: demo RMS -15.0 dBFS
+- K08 Negative space ending bars 57-64: demo RMS -17.6 dBFS
+- K08 quiet-region RMS / loudest core-region RMS = 0.228
+- K08 bass note-ons within 20 ms of a kick: 56/180 (0.31). Window is 37 ticks.
+- K08 core V01 spectral centroid 8352 Hz, RMS -16.2 dBFS. Centroid is a magnitude-weighted mean of one Hann-windowed FFT of the whole file, not a key estimate.

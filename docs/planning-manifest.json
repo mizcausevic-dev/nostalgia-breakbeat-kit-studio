@@ -1,0 +1,1953 @@
+{
+  "collection": "Nostalgia",
+  "status": "planned_before_audio",
+  "generated_at_utc": "2026-10-31T16:01:34Z",
+  "version": "1.0.0",
+  "renderer": {
+    "implementation": "Python numpy/scipy offline buffers",
+    "supercollider": "not installed; nostalgia-engines.scd is not executed",
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "platform": "Linux-6.12.94+-x86_64-with-glibc2.39",
+    "sample_rate": 48000,
+    "bit_depth": 24,
+    "control_block": 64,
+    "algorithmic_latency_samples": 0,
+    "filter_note": "Lowpass coefficients update every 64 samples. Oscillators are sample accurate. Filter phase delay is not compensated."
+  },
+  "timing": {
+    "tpq": 960,
+    "bar_ticks": 3840,
+    "rounding": "half-up of absolute ticks * 48000 * mpqn / (1000000 * 960); do not accumulate rounded beats",
+    "tail_seconds": 2.0,
+    "tail_samples": 96000,
+    "ceiling_linear": 0.9440608762859234,
+    "target_peak_linear": 0.8912509381337456,
+    "c4": 60
+  },
+  "pitch_limits": {
+    "bass": {
+      "low": 28,
+      "high": 60,
+      "max_active": 1
+    },
+    "hook": {
+      "low": 48,
+      "high": 96,
+      "max_active": 2
+    },
+    "stabs": {
+      "low": 48,
+      "high": 84,
+      "max_active": 8
+    },
+    "acid": {
+      "low": 36,
+      "high": 84,
+      "max_active": 1
+    },
+    "atmos": {
+      "low": 36,
+      "high": 96,
+      "max_active": 8
+    }
+  },
+  "percussion_map": {
+    "36": "Bass Drum 1",
+    "37": "Side Stick",
+    "38": "Acoustic Snare",
+    "39": "Hand Clap",
+    "41": "Low Floor Tom",
+    "42": "Closed Hi-Hat",
+    "43": "High Floor Tom",
+    "45": "Low Tom",
+    "46": "Open Hi-Hat",
+    "47": "Low-Mid Tom",
+    "48": "Hi-Mid Tom",
+    "49": "Crash Cymbal 1",
+    "50": "High Tom",
+    "51": "Ride Cymbal 1",
+    "53": "Ride Bell",
+    "54": "Tambourine",
+    "56": "Cowbell",
+    "62": "Mute Hi Conga",
+    "63": "Open Hi Conga",
+    "64": "Low Conga",
+    "70": "Maracas",
+    "82": "Shaker"
+  },
+  "drum_gate_ticks": {
+    "36": 60,
+    "37": 60,
+    "38": 60,
+    "39": 60,
+    "41": 120,
+    "42": 60,
+    "43": 120,
+    "45": 120,
+    "46": 180,
+    "47": 120,
+    "48": 120,
+    "49": 480,
+    "50": 120,
+    "51": 240,
+    "53": 120,
+    "54": 60,
+    "56": 60,
+    "62": 80,
+    "63": 80,
+    "64": 80,
+    "70": 40,
+    "82": 40
+  },
+  "kits": {
+    "K01": {
+      "name": "Freight",
+      "direction": "Warehouse Pressure",
+      "bpm_requested": 128,
+      "mpqn": 468750,
+      "bpm_effective": 128.0,
+      "key_label": "A-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 9,
+      "identities": [
+        "K01-CB-V01",
+        "K01-CB-V02",
+        "K01-CB-V03",
+        "K01-RD-V01",
+        "K01-RD-V02",
+        "K01-AP-V01",
+        "K01-AP-V02",
+        "K01-BS-V01",
+        "K01-BS-V02",
+        "K01-HK-V01",
+        "K01-HK-V02",
+        "K01-ST-V01",
+        "K01-ST-V02",
+        "K01-AC-V01",
+        "K01-AC-V02",
+        "K01-AT-V01",
+        "K01-AT-V02",
+        "K01-FL-Connector",
+        "K01-FL-Detail",
+        "K01-FL-Stop",
+        "K01-FL-Turnaround",
+        "K01-FX-Accent",
+        "K01-FX-Build",
+        "K01-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K01-S01",
+          "start_bar": 0,
+          "end_bar": 8,
+          "name": "Opening identity",
+          "roles": {
+            "atmos": "V01",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K01-S02",
+          "start_bar": 8,
+          "end_bar": 16,
+          "name": "Break established",
+          "roles": {
+            "core": "V01",
+            "aux": "V01",
+            "atmos": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K01-S03",
+          "start_bar": 16,
+          "end_bar": 24,
+          "name": "Bass lock",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "reinf": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K01-S04",
+          "start_bar": 24,
+          "end_bar": 32,
+          "name": "Hook statement",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V01",
+            "stabs": "V01",
+            "reinf": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K01-S05",
+          "start_bar": 32,
+          "end_bar": 40,
+          "name": "Breakdown",
+          "roles": {
+            "atmos": "V02",
+            "hook": "V02"
+          },
+          "custom": {
+            "bass": "K01_F_PEDAL"
+          }
+        },
+        {
+          "region_id": "K01-S06",
+          "start_bar": 40,
+          "end_bar": 48,
+          "name": "Rebuild",
+          "roles": {
+            "core": "V02",
+            "aux": "V02",
+            "acid": "V01",
+            "atmos": "V02",
+            "bass": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K01-S07",
+          "start_bar": 48,
+          "end_bar": 60,
+          "name": "Transformed return",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V02",
+            "acid": "V02",
+            "reinf": "V02",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K01-S08",
+          "start_bar": 60,
+          "end_bar": 64,
+          "name": "Ending",
+          "roles": {
+            "core": "V01",
+            "bass": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K01-H01",
+          "start_bar": 0,
+          "end_bar": 32,
+          "root_pc": 9,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K01-H02",
+          "start_bar": 32,
+          "end_bar": 40,
+          "root_pc": 5,
+          "quality": "major",
+          "function": "bVI",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K01-H03",
+          "start_bar": 40,
+          "end_bar": 48,
+          "root_pc": 9,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K01-H04",
+          "start_bar": 48,
+          "end_bar": 64,
+          "root_pc": 9,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11
+          ]
+        }
+      ],
+      "swing": {
+        "swing": null,
+        "fixed_offset": {
+          "snare": 18,
+          "ghost": -10
+        },
+        "hat_odd_extra": 0,
+        "reset": "No swing. Fixed offsets are constant and do not reset. Downbeats are not delayed by swing."
+      }
+    },
+    "K02": {
+      "name": "Rivet",
+      "direction": "Warehouse Pressure",
+      "bpm_requested": 136,
+      "mpqn": 441176,
+      "bpm_effective": 136.0001450668214,
+      "key_label": "E-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 4,
+      "identities": [
+        "K02-CB-V01",
+        "K02-CB-V02",
+        "K02-CB-V03",
+        "K02-RD-V01",
+        "K02-RD-V02",
+        "K02-AP-V01",
+        "K02-AP-V02",
+        "K02-BS-V01",
+        "K02-BS-V02",
+        "K02-HK-V01",
+        "K02-HK-V02",
+        "K02-ST-V01",
+        "K02-ST-V02",
+        "K02-AC-V01",
+        "K02-AC-V02",
+        "K02-AT-V01",
+        "K02-AT-V02",
+        "K02-FL-Connector",
+        "K02-FL-Detail",
+        "K02-FL-Stop",
+        "K02-FL-Turnaround",
+        "K02-FX-Accent",
+        "K02-FX-Build",
+        "K02-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K02-S01",
+          "start_bar": 0,
+          "end_bar": 4,
+          "name": "Cold open",
+          "roles": {
+            "core": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K02-S02",
+          "start_bar": 4,
+          "end_bar": 12,
+          "name": "Bass and break",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "reinf": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K02-S03",
+          "start_bar": 12,
+          "end_bar": 20,
+          "name": "Hook",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K02-S04",
+          "start_bar": 20,
+          "end_bar": 28,
+          "name": "Full pressure",
+          "roles": {
+            "core": "V02",
+            "bass": "V01",
+            "hook": "V01",
+            "stabs": "V01",
+            "reinf": "V02",
+            "aux": "V01",
+            "acid": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K02-S05",
+          "start_bar": 28,
+          "end_bar": 36,
+          "name": "Subtraction",
+          "roles": {
+            "atmos": "V01",
+            "hook": "V02"
+          },
+          "custom": {
+            "bass": "K02_C_PEDAL"
+          }
+        },
+        {
+          "region_id": "K02-S06",
+          "start_bar": 36,
+          "end_bar": 44,
+          "name": "Rebuild",
+          "roles": {
+            "core": "V02",
+            "aux": "V02",
+            "acid": "V02",
+            "atmos": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K02-S07",
+          "start_bar": 44,
+          "end_bar": 56,
+          "name": "Transformed return",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V02",
+            "acid": "V01",
+            "reinf": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K02-S08",
+          "start_bar": 56,
+          "end_bar": 64,
+          "name": "Ending dropout",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "atmos": "V02"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K02-H01",
+          "start_bar": 0,
+          "end_bar": 28,
+          "root_pc": 4,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            6,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K02-H02",
+          "start_bar": 28,
+          "end_bar": 36,
+          "root_pc": 0,
+          "quality": "major",
+          "function": "bVI",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            6,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K02-H03",
+          "start_bar": 36,
+          "end_bar": 64,
+          "root_pc": 4,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            6,
+            7,
+            9,
+            11
+          ]
+        }
+      ],
+      "swing": {
+        "swing": null,
+        "fixed_offset": {
+          "snare": 8,
+          "ghost": 5
+        },
+        "hat_odd_extra": -4,
+        "reset": "No swing. Fixed offsets are constant and do not reset. Downbeats are not delayed by swing."
+      }
+    },
+    "K03": {
+      "name": "Solvent",
+      "direction": "Acid Collision",
+      "bpm_requested": 132,
+      "mpqn": 454545,
+      "bpm_effective": 132.000132000132,
+      "key_label": "Fs-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 6,
+      "identities": [
+        "K03-CB-V01",
+        "K03-CB-V02",
+        "K03-CB-V03",
+        "K03-RD-V01",
+        "K03-RD-V02",
+        "K03-AP-V01",
+        "K03-AP-V02",
+        "K03-BS-V01",
+        "K03-BS-V02",
+        "K03-HK-V01",
+        "K03-HK-V02",
+        "K03-ST-V01",
+        "K03-ST-V02",
+        "K03-AC-V01",
+        "K03-AC-V02",
+        "K03-AT-V01",
+        "K03-AT-V02",
+        "K03-FL-Connector",
+        "K03-FL-Detail",
+        "K03-FL-Stop",
+        "K03-FL-Turnaround",
+        "K03-FX-Accent",
+        "K03-FX-Build",
+        "K03-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K03-S01",
+          "start_bar": 0,
+          "end_bar": 8,
+          "name": "Acid alone",
+          "roles": {
+            "acid": "V01",
+            "atmos": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K03-S02",
+          "start_bar": 8,
+          "end_bar": 16,
+          "name": "Collision",
+          "roles": {
+            "acid": "V01",
+            "core": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K03-S03",
+          "start_bar": 16,
+          "end_bar": 24,
+          "name": "Bass joins",
+          "roles": {
+            "acid": "V01",
+            "core": "V01",
+            "bass": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K03-S04",
+          "start_bar": 24,
+          "end_bar": 36,
+          "name": "Phrygian tension",
+          "roles": {
+            "core": "V02"
+          },
+          "custom": {
+            "bass": "K03_G_BASS",
+            "acid": "K03_G_ACID"
+          }
+        },
+        {
+          "region_id": "K03-S05",
+          "start_bar": 36,
+          "end_bar": 44,
+          "name": "Hook",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V01",
+            "stabs": "V01",
+            "acid": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K03-S06",
+          "start_bar": 44,
+          "end_bar": 52,
+          "name": "Breakdown",
+          "roles": {
+            "atmos": "V02",
+            "hook": "V02",
+            "acid": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K03-S07",
+          "start_bar": 52,
+          "end_bar": 60,
+          "name": "Transformed return",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V02",
+            "acid": "V01",
+            "reinf": "V02",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K03-S08",
+          "start_bar": 60,
+          "end_bar": 64,
+          "name": "Ending",
+          "roles": {
+            "core": "V01",
+            "bass": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K03-H01",
+          "start_bar": 0,
+          "end_bar": 24,
+          "root_pc": 6,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            1,
+            2,
+            4,
+            6,
+            8,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K03-H02",
+          "start_bar": 24,
+          "end_bar": 36,
+          "root_pc": 7,
+          "quality": "major",
+          "function": "bII",
+          "collection_mode": "phrygian",
+          "pitch_classes": [
+            1,
+            2,
+            4,
+            6,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "region_id": "K03-H03",
+          "start_bar": 36,
+          "end_bar": 64,
+          "root_pc": 6,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            1,
+            2,
+            4,
+            6,
+            8,
+            9,
+            11
+          ]
+        }
+      ],
+      "swing": {
+        "swing": null,
+        "fixed_offset": {
+          "snare": 4,
+          "ghost": -6
+        },
+        "hat_odd_extra": 0,
+        "reset": "No swing. Fixed offsets are constant and do not reset. Downbeats are not delayed by swing."
+      }
+    },
+    "K04": {
+      "name": "Catalyst",
+      "direction": "Acid Collision",
+      "bpm_requested": 124,
+      "mpqn": 483871,
+      "bpm_effective": 123.99999173333389,
+      "key_label": "D-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 2,
+      "identities": [
+        "K04-CB-V01",
+        "K04-CB-V02",
+        "K04-CB-V03",
+        "K04-RD-V01",
+        "K04-RD-V02",
+        "K04-AP-V01",
+        "K04-AP-V02",
+        "K04-BS-V01",
+        "K04-BS-V02",
+        "K04-HK-V01",
+        "K04-HK-V02",
+        "K04-ST-V01",
+        "K04-ST-V02",
+        "K04-AC-V01",
+        "K04-AC-V02",
+        "K04-AT-V01",
+        "K04-AT-V02",
+        "K04-FL-Connector",
+        "K04-FL-Detail",
+        "K04-FL-Stop",
+        "K04-FL-Turnaround",
+        "K04-FX-Accent",
+        "K04-FX-Build",
+        "K04-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K04-S01",
+          "start_bar": 0,
+          "end_bar": 12,
+          "name": "Swing intro",
+          "roles": {
+            "atmos": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K04-S02",
+          "start_bar": 12,
+          "end_bar": 20,
+          "name": "Break and acid",
+          "roles": {
+            "core": "V01",
+            "acid": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K04-S03",
+          "start_bar": 20,
+          "end_bar": 28,
+          "name": "Bass weight",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "acid": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K04-S04",
+          "start_bar": 28,
+          "end_bar": 36,
+          "name": "Stab weight",
+          "roles": {
+            "core": "V02",
+            "bass": "V01",
+            "stabs": "V01",
+            "hook": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K04-S05",
+          "start_bar": 36,
+          "end_bar": 44,
+          "name": "Breakdown",
+          "roles": {
+            "atmos": "V02",
+            "hook": "V02"
+          },
+          "custom": {
+            "bass": "K04_G_PEDAL"
+          }
+        },
+        {
+          "region_id": "K04-S06",
+          "start_bar": 44,
+          "end_bar": 52,
+          "name": "Rebuild",
+          "roles": {
+            "core": "V02",
+            "aux": "V02",
+            "acid": "V02",
+            "bass": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K04-S07",
+          "start_bar": 52,
+          "end_bar": 60,
+          "name": "Transformed return",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V01",
+            "stabs": "V02",
+            "acid": "V01",
+            "reinf": "V02",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K04-S08",
+          "start_bar": 60,
+          "end_bar": 64,
+          "name": "Ending",
+          "roles": {
+            "core": "V01",
+            "atmos": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K04-H01",
+          "start_bar": 0,
+          "end_bar": 36,
+          "root_pc": 2,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "region_id": "K04-H02",
+          "start_bar": 36,
+          "end_bar": 44,
+          "root_pc": 7,
+          "quality": "major",
+          "function": "IV",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "region_id": "K04-H03",
+          "start_bar": 44,
+          "end_bar": 64,
+          "root_pc": 2,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            10
+          ]
+        }
+      ],
+      "swing": {
+        "swing": {
+          "subdivision_ticks": 240,
+          "offset_ticks": 36,
+          "instruments": [
+            "hat",
+            "open",
+            "ghost",
+            "shaker",
+            "tamb",
+            "bass",
+            "acid",
+            "cowbell",
+            "conga"
+          ]
+        },
+        "subdivision_ticks": 240,
+        "offset_ticks": 36,
+        "instruments": [
+          "hat",
+          "open",
+          "ghost",
+          "shaker",
+          "tamb",
+          "bass",
+          "acid",
+          "cowbell",
+          "conga"
+        ],
+        "reset": "Odd sixteenths of the named instruments are delayed. Even sixteenths, including every downbeat, receive no swing.",
+        "fixed_offset": {
+          "snare": 20
+        },
+        "hat_odd_extra": 0
+      }
+    },
+    "K05": {
+      "name": "Afterglow",
+      "direction": "Rave Memory",
+      "bpm_requested": 130,
+      "mpqn": 461538,
+      "bpm_effective": 130.00013000013,
+      "key_label": "C-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 0,
+      "identities": [
+        "K05-CB-V01",
+        "K05-CB-V02",
+        "K05-CB-V03",
+        "K05-RD-V01",
+        "K05-RD-V02",
+        "K05-AP-V01",
+        "K05-AP-V02",
+        "K05-BS-V01",
+        "K05-BS-V02",
+        "K05-HK-V01",
+        "K05-HK-V02",
+        "K05-ST-V01",
+        "K05-ST-V02",
+        "K05-AC-V01",
+        "K05-AC-V02",
+        "K05-AT-V01",
+        "K05-AT-V02",
+        "K05-FL-Connector",
+        "K05-FL-Detail",
+        "K05-FL-Stop",
+        "K05-FL-Turnaround",
+        "K05-FX-Accent",
+        "K05-FX-Build",
+        "K05-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K05-S01",
+          "start_bar": 0,
+          "end_bar": 8,
+          "name": "Stab motif",
+          "roles": {
+            "stabs": "V01",
+            "atmos": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S02",
+          "start_bar": 8,
+          "end_bar": 16,
+          "name": "Break",
+          "roles": {
+            "core": "V01",
+            "stabs": "V01",
+            "aux": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S03",
+          "start_bar": 16,
+          "end_bar": 24,
+          "name": "Hook and bass",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V01",
+            "stabs": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S04",
+          "start_bar": 24,
+          "end_bar": 36,
+          "name": "Relative lift",
+          "roles": {
+            "core": "V02",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V02",
+            "reinf": "V01",
+            "aux": "V02",
+            "acid": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S05",
+          "start_bar": 36,
+          "end_bar": 48,
+          "name": "Breakdown",
+          "roles": {
+            "atmos": "V02",
+            "hook": "V01",
+            "stabs": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S06",
+          "start_bar": 48,
+          "end_bar": 56,
+          "name": "Rebuild",
+          "roles": {
+            "core": "V02",
+            "aux": "V01",
+            "acid": "V02",
+            "bass": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S07",
+          "start_bar": 56,
+          "end_bar": 62,
+          "name": "Transformed return",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V01",
+            "acid": "V01",
+            "reinf": "V02",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K05-S08",
+          "start_bar": 62,
+          "end_bar": 64,
+          "name": "Short ending",
+          "roles": {
+            "core": "V01",
+            "atmos": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K05-H01",
+          "start_bar": 0,
+          "end_bar": 24,
+          "root_pc": 0,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K05-H02",
+          "start_bar": 24,
+          "end_bar": 36,
+          "root_pc": 3,
+          "quality": "major",
+          "function": "bIII",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K05-H03",
+          "start_bar": 36,
+          "end_bar": 56,
+          "root_pc": 0,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K05-H04",
+          "start_bar": 56,
+          "end_bar": 62,
+          "root_pc": 3,
+          "quality": "major",
+          "function": "bIII",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K05-H05",
+          "start_bar": 62,
+          "end_bar": 64,
+          "root_pc": 0,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        }
+      ],
+      "swing": {
+        "swing": null,
+        "fixed_offset": {
+          "snare": 10,
+          "hat": 6,
+          "open": 6
+        },
+        "hat_odd_extra": 0,
+        "reset": "No swing. Fixed offsets are constant and do not reset. Downbeats are not delayed by swing."
+      }
+    },
+    "K06": {
+      "name": "Sodium",
+      "direction": "Rave Memory",
+      "bpm_requested": 118,
+      "mpqn": 508475,
+      "bpm_effective": 117.99990166674861,
+      "key_label": "Bb-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 10,
+      "identities": [
+        "K06-CB-V01",
+        "K06-CB-V02",
+        "K06-CB-V03",
+        "K06-RD-V01",
+        "K06-RD-V02",
+        "K06-AP-V01",
+        "K06-AP-V02",
+        "K06-BS-V01",
+        "K06-BS-V02",
+        "K06-HK-V01",
+        "K06-HK-V02",
+        "K06-ST-V01",
+        "K06-ST-V02",
+        "K06-AC-V01",
+        "K06-AC-V02",
+        "K06-AT-V01",
+        "K06-AT-V02",
+        "K06-FL-Connector",
+        "K06-FL-Detail",
+        "K06-FL-Stop",
+        "K06-FL-Turnaround",
+        "K06-FX-Accent",
+        "K06-FX-Build",
+        "K06-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K06-S01",
+          "start_bar": 0,
+          "end_bar": 8,
+          "name": "Sparse open",
+          "roles": {
+            "atmos": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K06-S02",
+          "start_bar": 8,
+          "end_bar": 16,
+          "name": "Air and stab",
+          "roles": {
+            "atmos": "V01",
+            "stabs": "V01",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K06-S03",
+          "start_bar": 16,
+          "end_bar": 24,
+          "name": "Break and stab",
+          "roles": {
+            "core": "V01",
+            "stabs": "V01",
+            "aux": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K06-S04",
+          "start_bar": 24,
+          "end_bar": 32,
+          "name": "Bass and hook",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V01",
+            "stabs": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K06-S05",
+          "start_bar": 32,
+          "end_bar": 40,
+          "name": "Peak",
+          "roles": {
+            "core": "V02",
+            "bass": "V01",
+            "hook": "V01",
+            "acid": "V01",
+            "reinf": "V02",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K06-S06",
+          "start_bar": 40,
+          "end_bar": 48,
+          "name": "Breakdown",
+          "roles": {
+            "atmos": "V02",
+            "hook": "V02"
+          },
+          "custom": {
+            "bass": "K06_GB_PEDAL"
+          }
+        },
+        {
+          "region_id": "K06-S07",
+          "start_bar": 48,
+          "end_bar": 56,
+          "name": "Rebuild",
+          "roles": {
+            "core": "V02",
+            "aux": "V02",
+            "acid": "V02",
+            "bass": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K06-S08",
+          "start_bar": 56,
+          "end_bar": 64,
+          "name": "Return and end",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V01",
+            "reinf": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K06-H01",
+          "start_bar": 0,
+          "end_bar": 40,
+          "root_pc": 10,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K06-H02",
+          "start_bar": 40,
+          "end_bar": 48,
+          "root_pc": 6,
+          "quality": "major",
+          "function": "bVI",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K06-H03",
+          "start_bar": 48,
+          "end_bar": 64,
+          "root_pc": 10,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8,
+            10
+          ]
+        }
+      ],
+      "swing": {
+        "swing": null,
+        "fixed_offset": {
+          "snare": 22,
+          "ghost": -12
+        },
+        "hat_odd_extra": 0,
+        "reset": "No swing. Fixed offsets are constant and do not reset. Downbeats are not delayed by swing."
+      }
+    },
+    "K07": {
+      "name": "Rebar",
+      "direction": "Concrete Funk",
+      "bpm_requested": 112,
+      "mpqn": 535714,
+      "bpm_effective": 112.00005973336519,
+      "key_label": "G-minor",
+      "mode": "natural_minor",
+      "tonic_pc": 7,
+      "identities": [
+        "K07-CB-V01",
+        "K07-CB-V02",
+        "K07-CB-V03",
+        "K07-RD-V01",
+        "K07-RD-V02",
+        "K07-AP-V01",
+        "K07-AP-V02",
+        "K07-BS-V01",
+        "K07-BS-V02",
+        "K07-HK-V01",
+        "K07-HK-V02",
+        "K07-ST-V01",
+        "K07-ST-V02",
+        "K07-AC-V01",
+        "K07-AC-V02",
+        "K07-AT-V01",
+        "K07-AT-V02",
+        "K07-FL-Connector",
+        "K07-FL-Detail",
+        "K07-FL-Stop",
+        "K07-FL-Turnaround",
+        "K07-FX-Accent",
+        "K07-FX-Build",
+        "K07-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K07-S01",
+          "start_bar": 0,
+          "end_bar": 4,
+          "name": "Bass alone",
+          "roles": {
+            "bass": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S02",
+          "start_bar": 4,
+          "end_bar": 12,
+          "name": "Break dialogue",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S03",
+          "start_bar": 12,
+          "end_bar": 20,
+          "name": "Full groove",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "reinf": "V01",
+            "aux": "V01",
+            "hook": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S04",
+          "start_bar": 20,
+          "end_bar": 28,
+          "name": "Hook answers",
+          "roles": {
+            "core": "V02",
+            "bass": "V02",
+            "hook": "V01",
+            "stabs": "V01",
+            "reinf": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S05",
+          "start_bar": 28,
+          "end_bar": 40,
+          "name": "Long space",
+          "roles": {
+            "atmos": "V01",
+            "hook": "V02",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S06",
+          "start_bar": 40,
+          "end_bar": 48,
+          "name": "Percussion rebuild",
+          "roles": {
+            "core": "V02",
+            "aux": "V01",
+            "acid": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S07",
+          "start_bar": 48,
+          "end_bar": 58,
+          "name": "Transformed return",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V02",
+            "acid": "V02",
+            "reinf": "V02",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K07-S08",
+          "start_bar": 58,
+          "end_bar": 64,
+          "name": "Stop ending",
+          "roles": {
+            "core": "V01",
+            "bass": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K07-H01",
+          "start_bar": 0,
+          "end_bar": 20,
+          "root_pc": 7,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "region_id": "K07-H02",
+          "start_bar": 20,
+          "end_bar": 28,
+          "root_pc": 0,
+          "quality": "minor",
+          "function": "iv",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "region_id": "K07-H03",
+          "start_bar": 28,
+          "end_bar": 48,
+          "root_pc": 7,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "region_id": "K07-H04",
+          "start_bar": 48,
+          "end_bar": 58,
+          "root_pc": 0,
+          "quality": "minor",
+          "function": "iv",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "region_id": "K07-H05",
+          "start_bar": 58,
+          "end_bar": 64,
+          "root_pc": 7,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "natural_minor",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ]
+        }
+      ],
+      "swing": {
+        "swing": {
+          "subdivision_ticks": 240,
+          "offset_ticks": 48,
+          "instruments": [
+            "hat",
+            "open",
+            "ghost",
+            "rim",
+            "shaker",
+            "tamb",
+            "bass",
+            "acid",
+            "cowbell",
+            "conga"
+          ]
+        },
+        "subdivision_ticks": 240,
+        "offset_ticks": 48,
+        "instruments": [
+          "hat",
+          "open",
+          "ghost",
+          "rim",
+          "shaker",
+          "tamb",
+          "bass",
+          "acid",
+          "cowbell",
+          "conga"
+        ],
+        "reset": "Odd sixteenths of the named instruments are delayed. Even sixteenths, including every downbeat, receive no swing.",
+        "fixed_offset": {
+          "snare": 12
+        },
+        "hat_odd_extra": 0
+      }
+    },
+    "K08": {
+      "name": "Formwork",
+      "direction": "Concrete Funk",
+      "bpm_requested": 116,
+      "mpqn": 517241,
+      "bpm_effective": 116.00008506672904,
+      "key_label": "F-dorian",
+      "mode": "dorian",
+      "tonic_pc": 5,
+      "identities": [
+        "K08-CB-V01",
+        "K08-CB-V02",
+        "K08-CB-V03",
+        "K08-RD-V01",
+        "K08-RD-V02",
+        "K08-AP-V01",
+        "K08-AP-V02",
+        "K08-BS-V01",
+        "K08-BS-V02",
+        "K08-HK-V01",
+        "K08-HK-V02",
+        "K08-ST-V01",
+        "K08-ST-V02",
+        "K08-AC-V01",
+        "K08-AC-V02",
+        "K08-AT-V01",
+        "K08-AT-V02",
+        "K08-FL-Connector",
+        "K08-FL-Detail",
+        "K08-FL-Stop",
+        "K08-FL-Turnaround",
+        "K08-FX-Accent",
+        "K08-FX-Build",
+        "K08-FX-Release"
+      ],
+      "sections": [
+        {
+          "region_id": "K08-S01",
+          "start_bar": 0,
+          "end_bar": 8,
+          "name": "Percussion without kick",
+          "roles": {
+            "aux": "V01",
+            "atmos": "V01",
+            "reinf": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S02",
+          "start_bar": 8,
+          "end_bar": 16,
+          "name": "Kick and bass",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S03",
+          "start_bar": 16,
+          "end_bar": 24,
+          "name": "Stabs and hook",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V01",
+            "stabs": "V01",
+            "reinf": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S04",
+          "start_bar": 24,
+          "end_bar": 32,
+          "name": "Acid color",
+          "roles": {
+            "core": "V02",
+            "bass": "V02",
+            "acid": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S05",
+          "start_bar": 32,
+          "end_bar": 40,
+          "name": "Full",
+          "roles": {
+            "core": "V01",
+            "bass": "V01",
+            "hook": "V02",
+            "stabs": "V02",
+            "acid": "V02",
+            "reinf": "V01",
+            "aux": "V02"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S06",
+          "start_bar": 40,
+          "end_bar": 48,
+          "name": "Breakdown",
+          "roles": {
+            "atmos": "V02",
+            "hook": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S07",
+          "start_bar": 48,
+          "end_bar": 56,
+          "name": "Transformed",
+          "roles": {
+            "core": "V03",
+            "bass": "V02",
+            "hook": "V02",
+            "stabs": "V01",
+            "acid": "V01",
+            "aux": "V01"
+          },
+          "custom": {}
+        },
+        {
+          "region_id": "K08-S08",
+          "start_bar": 56,
+          "end_bar": 64,
+          "name": "Negative space ending",
+          "roles": {
+            "core": "V02",
+            "atmos": "V01",
+            "bass": "V01"
+          },
+          "custom": {}
+        }
+      ],
+      "harmony": [
+        {
+          "region_id": "K08-H01",
+          "start_bar": 0,
+          "end_bar": 24,
+          "root_pc": 5,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "dorian",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K08-H02",
+          "start_bar": 24,
+          "end_bar": 32,
+          "root_pc": 10,
+          "quality": "major",
+          "function": "IV",
+          "collection_mode": "dorian",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K08-H03",
+          "start_bar": 32,
+          "end_bar": 48,
+          "root_pc": 5,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "dorian",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K08-H04",
+          "start_bar": 48,
+          "end_bar": 56,
+          "root_pc": 10,
+          "quality": "major",
+          "function": "IV",
+          "collection_mode": "dorian",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "region_id": "K08-H05",
+          "start_bar": 56,
+          "end_bar": 64,
+          "root_pc": 5,
+          "quality": "minor",
+          "function": "i",
+          "collection_mode": "dorian",
+          "pitch_classes": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            10
+          ]
+        }
+      ],
+      "swing": {
+        "swing": null,
+        "fixed_offset": {
+          "kick": 10,
+          "hat": -8,
+          "open": -8,
+          "ghost": -8
+        },
+        "hat_odd_extra": 0,
+        "reset": "No swing. Fixed offsets are constant and do not reset. Downbeats are not delayed by swing."
+      }
+    }
+  },
+  "identity_count": 192,
+  "dry_policy": {
+    "drums": "Dry is the peak-normalized excitation. Processed is that buffer through room taps and tanh, without a second normalize.",
+    "pitched": "Dry sets drive to 1. Glide, filter, and envelope stay. No dry file when drive is already 1.",
+    "not_duplicated": "Reinforcement, auxiliary percussion, stabs, atmosphere, fills, and FX do not get a second file just to satisfy a dry/processed pair."
+  }
+}
