@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mizcausevic-dev.github.io/nostalgia-breakbeat-kit-studio/sitemap.xml

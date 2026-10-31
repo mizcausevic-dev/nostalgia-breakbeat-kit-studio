@@ -1,0 +1,81 @@
+{
+  "meter": "ffmpeg 6.1.1 ebur128 peak=true",
+  "standard": "ITU-R BS.1770 integrated loudness, true peak oversampled by the filter",
+  "scope": "Each full 64-bar demo WAV, stereo 48 kHz 24-bit, including the 2-second tail.",
+  "notInValidator": "The file validator did not measure LUFS or true peak. These numbers were measured afterwards, on the same demo files.",
+  "previewFades": "The 20 ms and 300 ms fades are not in these measurements.",
+  "kits": {
+    "K01": {
+      "integratedLufs": -15.3,
+      "lraLu": 15.1,
+      "truePeakDbfs": -0.9,
+      "startSample": 2160000,
+      "demo": "Nostalgia_K01_Demo_128BPM_KeyA-minor_64bar_Main.wav",
+      "lraLowLufs": -28.7,
+      "lraHighLufs": -13.5
+    },
+    "K02": {
+      "integratedLufs": -14.1,
+      "lraLu": 4.6,
+      "truePeakDbfs": -1.0,
+      "startSample": 1694116,
+      "demo": "Nostalgia_K02_Demo_136BPM_KeyE-minor_64bar_Main.wav",
+      "lraLowLufs": -17.0,
+      "lraHighLufs": -12.4
+    },
+    "K03": {
+      "integratedLufs": -13.8,
+      "lraLu": 5.6,
+      "truePeakDbfs": -1.0,
+      "startSample": 3141815,
+      "demo": "Nostalgia_K03_Demo_132BPM_KeyFs-minor_64bar_Main.wav",
+      "lraLowLufs": -17.8,
+      "lraHighLufs": -12.2
+    },
+    "K04": {
+      "integratedLufs": -14.0,
+      "lraLu": 16.6,
+      "truePeakDbfs": -0.9,
+      "startSample": 2601290,
+      "demo": "Nostalgia_K04_Demo_124BPM_KeyD-minor_64bar_Main.wav",
+      "lraLowLufs": -28.8,
+      "lraHighLufs": -12.2
+    },
+    "K05": {
+      "integratedLufs": -15.0,
+      "lraLu": 11.2,
+      "truePeakDbfs": -0.9,
+      "startSample": 2126767,
+      "demo": "Nostalgia_K05_Demo_130BPM_KeyC-minor_64bar_Main.wav",
+      "lraLowLufs": -24.0,
+      "lraHighLufs": -12.8
+    },
+    "K06": {
+      "integratedLufs": -14.5,
+      "lraLu": 13.0,
+      "truePeakDbfs": -1.0,
+      "startSample": 3124070,
+      "demo": "Nostalgia_K06_Demo_118BPM_KeyBb-minor_64bar_Main.wav",
+      "lraLowLufs": -24.9,
+      "lraHighLufs": -11.9
+    },
+    "K07": {
+      "integratedLufs": -16.6,
+      "lraLu": 8.6,
+      "truePeakDbfs": -1.0,
+      "startSample": 1234285,
+      "demo": "Nostalgia_K07_Demo_112BPM_KeyG-minor_64bar_Main.wav",
+      "lraLowLufs": -22.9,
+      "lraHighLufs": -14.3
+    },
+    "K08": {
+      "integratedLufs": -15.3,
+      "lraLu": 10.6,
+      "truePeakDbfs": -1.0,
+      "startSample": 3177929,
+      "demo": "Nostalgia_K08_Demo_116BPM_KeyF-dorian_64bar_Main.wav",
+      "lraLowLufs": -24.0,
+      "lraHighLufs": -13.4
+    }
+  }
+}
